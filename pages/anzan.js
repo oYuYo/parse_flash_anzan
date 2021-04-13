@@ -1,9 +1,6 @@
 import {useEffect, useLayoutEffect, useState, useRef} from "react"
 import {Router, useRouter} from "next/router"
 import Layout from "../components/layout"
-import styles from "../styles/Home.module.css"
-import Link from "next/link"
-import MyImage from "../components/image"
 
 export default function Anzan(){
   const numbers = [
@@ -31,7 +28,7 @@ export default function Anzan(){
   const [gap, setGap] = useState(0)
   const [test, setTest] = useState(0)
   const [canSubmit, setCansubmit] = useState(false)
-  const numOfProblems = 5
+  const numOfProblems = 5     //5問出す
   const router = useRouter()
   const mode = router.query.mode
 
@@ -57,13 +54,13 @@ export default function Anzan(){
     if (gap===0 && d2===1){
       setGap(baseTimer)
     }
-    if ((baseTimer - test)%blinkingInterval == 0){
-      if (0<problemsCount && problemsCount < 6){  //5問出す
+    if ((baseTimer - test)%blinkingInterval === 0){
+      if (0<problemsCount && problemsCount < 6){
         setTest(baseTimer)
         Problems()
         setProblemsCount(problemsCount => problemsCount + 1)
       }
-      if (5<problemsCount){
+      if (numOfProblems < problemsCount){
         setD1("")
         setD2("")
         setD3("")
@@ -95,7 +92,7 @@ export default function Anzan(){
       case "Easy":
         problem = Math.floor(Math.random() * 9) + 1
         rnd = Math.floor(Math.random() * numbers[problem].length)
-        setD1(numbers[problem][rnd])
+        setD2(numbers[problem][rnd])
         setTestAnswer(testAnswer + problem)
         break
       case "Normal":

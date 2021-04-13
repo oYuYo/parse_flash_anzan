@@ -3,7 +3,6 @@ import {useRouter} from "next/router"
 import Layout from "../components/layout"
 import styles from "../styles/Home.module.css"
 import Link from "next/link"
-import MyImage from "../components/image"
 import { normalizeConfig } from "next/dist/next-server/server/config-shared"
 
 export default function Home(){
