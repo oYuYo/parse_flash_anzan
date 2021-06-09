@@ -20,7 +20,7 @@ export default function Home(){
   }
   return (
     <div>
-      <Layout header="Parse Flash Anzan" help="what's?" title="パーズフラッシュ暗算">
+      <Layout header="Parse Flash Anzan" help="what's?" title="パースフラッシュ暗算">
         <div className="bg-primary mt-5 w-75 mx-auto">
           <table className="table table-borderless mt-4 text-white text-center mx-auto w-50">
             <tbody>
